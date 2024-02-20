@@ -47,9 +47,6 @@ ADD ${S6_URL} /
 
 ADD ${DOCKERIZE_URL} /
 
-
-ADD https://github.com/Secretmapper/combustion/archive/release.zip /
-
 RUN tar xzvf ${S6_FILENAME} \
     && rm ${S6_FILENAME} \
     && tar -C /usr/local/bin -xzvf ${DOCKERIZE_FILENAME} \
@@ -57,10 +54,6 @@ RUN tar xzvf ${S6_FILENAME} \
     && apk add --no-cache --update wireguard-tools transmission-daemon unzip privoxy \
     && rm -rf /usr/share/transmission/web/* \
     && unzip /release.zip \
-    && ls /combustion-release \
-    && mv /combustion-release/* /usr/share/transmission/web/ \
-    && rm /release.zip \
-    && rmdir /combustion-release  \
     && adduser --home /config --shell /bin/false --disabled-password twg_user
 
 COPY root/ .
