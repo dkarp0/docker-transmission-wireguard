@@ -63,8 +63,6 @@ RUN tar xzvf ${S6_FILENAME} \
     && rmdir /combustion-release  \
     && adduser --home /config --shell /bin/false --disabled-password twg_user
 
-ADD https://raw.githubusercontent.com/SebDanielsson/dark-combustion/master/main.77f9cffc.css /usr/share/transmission/web/
-
 COPY root/ .
 
 EXPOSE 9091 51820/udp
