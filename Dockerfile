@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM alpine:3.12 as base
+FROM --platform=$TARGETPLATFORM alpine:3.19.1 as base
 
 ENV DOCKERIZE_VERSION=v0.6.1 \
     S6_VERSION=v2.1.0.2 \
